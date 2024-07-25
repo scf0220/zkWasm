@@ -12,9 +12,13 @@ pub(crate) static ZKSYNC_KEY_URL: Lazy<HashMap<u32, ZKSyncKey>> = Lazy::new(|| {
         22,
         ZKSyncKey {
             k: 22,
-            monomial_key_url: String::from("https://storage.googleapis.com/universal-setup/setup_2%5E22.key"),
+            monomial_key_url: String::from(
+                "https://storage.googleapis.com/universal-setup/setup_2%5E22.key",
+            ),
             monomial_key_md5: String::from("4a337eff33368320b579a0319485170f"),
-            lagrange_key_url: String::from("https://storage.googleapis.com/universal-setup/setup_2%5E22_lagrange.key"),
+            lagrange_key_url: String::from(
+                "https://storage.googleapis.com/universal-setup/setup_2%5E22_lagrange.key",
+            ),
             lagrange_key_md5: String::from("c651928e884b8f1b02f970bba0287013"),
         },
     );

@@ -9,6 +9,7 @@ use pairing_ce::EncodedPoint;
 use std::io;
 use std::io::Read;
 
+// Read the zkSync key file and convert it to pairing_ce::G1Affine and G2Affine.
 pub fn read_zk_sync_key<R: Read>(
     mut reader: R,
 ) -> anyhow::Result<(Vec<G1AffineCE>, Vec<G2AffineCE>)> {
@@ -42,6 +43,7 @@ pub fn read_zk_sync_key<R: Read>(
     return Ok((g1_bases, g2_bases));
 }
 
+// Write the data required by Halo2 to a file.
 pub fn write_to_halo2<W: io::Write>(
     writer: &mut W,
     k: u32,

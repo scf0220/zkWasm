@@ -112,13 +112,13 @@ fn main() {
     let g_lagrange = handle_lagrange.join().unwrap();
     let g_monomial_key = handle_normal.join().unwrap();
     let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
-    println!("read zksync key succ k={:?}", k);
+    println!("finish read zksync key k={:?}", k);
     let file_path = format!("./K{:?}.params", k);
     let mut fd = File::create(file_path.clone()).unwrap();
     write_to_halo2(&mut fd, k, g_monomial_key, g_lagrange, additional_data)
         .expect("TODO: panic message");
     println!(
-        "write halo2 params succ k={:?} file_path={:?}",
+        "finish write halo2 params  k={:?} file_path={:?}",
         k, file_path
     )
 }

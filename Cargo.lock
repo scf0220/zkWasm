@@ -1300,22 +1300,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "hao2_key"
-version = "0.1.0"
-dependencies = [
- "anyhow",
- "byteorder",
- "chksum-md5",
- "halo2_proofs",
- "num-bigint",
- "num-traits",
- "once_cell",
- "pairing_bn256",
- "pairing_ce",
- "reqwest",
-]
-
-[[package]]
 name = "hashbrown"
 version = "0.12.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1668,6 +1652,22 @@ checksum = "7507624b29483431c0ba2d82aece8ca6cdba9382bff4ddd0f7490560c056098d"
 dependencies = [
  "winapi 0.2.8",
  "winapi-build",
+]
+
+[[package]]
+name = "key_tool"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "byteorder",
+ "chksum-md5",
+ "halo2_proofs",
+ "num-bigint",
+ "num-traits",
+ "once_cell",
+ "pairing_bn256",
+ "pairing_ce",
+ "reqwest",
 ]
 
 [[package]]

@@ -1,5 +1,5 @@
 [workspace]
-members = ["crates/specs", "crates/zkwasm", "crates/cli", "crates/host", "third-party/halo2_key"]
+members = ["crates/specs", "crates/zkwasm", "crates/cli", "crates/host", "third-party/key_tool"]
 exclude = ["third-party/wasmi", "crates/playground"]
 resolver = "2"
 

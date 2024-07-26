@@ -70,7 +70,7 @@ impl ZKSyncKey {
         let digest = md5::chksum(file)?;
         assert_eq!(digest.to_string(), self.monomial_key_md5);
         println!(
-            "k={} type=monomial check succ,local_patch={:?}",
+            "k={} type=monomial patch={:?} check succ",
             self.k, local_path
         );
         return Ok(());
@@ -86,7 +86,7 @@ impl ZKSyncKey {
         let digest = md5::chksum(file)?;
         assert_eq!(digest.to_string(), self.lagrange_key_md5);
         println!(
-            "k={} type=lagrange check succ,local_path={:?}",
+            "k={} type=lagrange path={:?} check succ",
             self.k, local_path
         );
         return Ok(());

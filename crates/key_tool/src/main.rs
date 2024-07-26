@@ -3,11 +3,11 @@ mod zksync_key;
 
 use crate::fs_util::read_zk_sync_key;
 use crate::fs_util::write_to_halo2;
-use halo2_proofs::pairing::arithmetic::CurveAffine;
-use halo2_proofs::pairing::bn256::Fq;
-use halo2_proofs::pairing::bn256::Fq2;
-use halo2_proofs::pairing::bn256::G1Affine;
-use halo2_proofs::pairing::bn256::G2Affine;
+use pairing_bn256::arithmetic::CurveAffine;
+use pairing_bn256::bn256::Fq;
+use pairing_bn256::bn256::Fq2;
+use pairing_bn256::bn256::G1Affine;
+use pairing_bn256::bn256::G2Affine;
 use num_traits::Num;
 use pairing_bn256::group::ff::PrimeField;
 use pairing_bn256::group::GroupEncoding;

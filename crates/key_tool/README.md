@@ -1,6 +1,7 @@
 # transfer zksync key to halo2 key
 
 The key in zkSync use the pairing_ce library and encode/decode using uncompressed data. 
+
 The key in Halo2 use the pairing library and encode/decode using compressed data.
 
 The pairing library does not provide encoding for uncompressed data, so a tool is needed to convert zkSync key to Halo2 key

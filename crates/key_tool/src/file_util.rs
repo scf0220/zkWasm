@@ -31,6 +31,9 @@ pub fn read_zk_sync_key<R: Read>(
         g1_bases.push(p);
     }
 
+
+    println!("num_g1={:?} first={:?}",num_g1,g1_bases[0]);
+
     let num_g2 = reader.read_u64::<BigEndian>()?;
     assert!(num_g2 == 2u64);
 
@@ -43,6 +46,7 @@ pub fn read_zk_sync_key<R: Read>(
             .map_err(|e| std::io::Error::new(std::io::ErrorKind::InvalidData, e))?;
         g2_bases.push(p);
     }
+    println!("num_g2={:?} zero={:?} first={:?}",num_g2,g2_bases[0],g2_bases[1]);
     return Ok((g1_bases, g2_bases));
 }
 

@@ -60,7 +60,7 @@ pub fn write_halo2_params<W: io::Write>(
 ) -> anyhow::Result<()> {
     writer.write_all(&k.to_le_bytes())?;
     for el in &g {
-        println!("el={:?} bytes={:?}",el,el.to_bytes());
+        println!("el={:?} {:?} bytes={:?}",el.x.to_string(),el.y.to_string(),el.to_bytes());
         writer.write_all(el.to_bytes().as_ref())?;
     }
     for el in &g_lagrange {

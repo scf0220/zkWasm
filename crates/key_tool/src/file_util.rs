@@ -33,7 +33,7 @@ pub fn read_zk_sync_key<R: Read>(
 
 
     let (x1,y1)=g1_bases[0].as_xy();
-    println!("num_g1={:?} x0={:?} y0={:?}",num_g1,x1.to_string(),y1.to_string());
+    println!("num_g1={:?} x0={:?} y0={:?}",num_g1,x1,y1);
 
     let num_g2 = reader.read_u64::<BigEndian>()?;
     assert!(num_g2 == 2u64);

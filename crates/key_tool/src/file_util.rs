@@ -65,18 +65,26 @@ pub fn write_halo2_params<W: io::Write>(
     writer.write_all(&k.to_le_bytes())?;
 
     println!("0 {:?} {:?}",g[0].x,g[0].y);
-    println!("1 {:?} {:?}",g[0].x,g[0].y);
-    println!("1000000 {:?} {:?}",g[0].x,g[0].y);
-    println!("2000000 {:?} {:?}",g[0].x,g[0].y);
+    println!("1 {:?} {:?}",g[1].x,g[1].y);
+    println!("1000000 {:?} {:?}",g[1000000].x,g[1000000].y);
+    println!("2000000 {:?} {:?}",g[2000000].x,g[2000000].y);
     for el in &g {
-        println!("el={:?} {:?} bytes={:?}",el.x,el.y,el.to_bytes());
         writer.write_all(el.to_bytes().as_ref())?;
     }
+
+    println!("0 {:?} {:?}",g_lagrange[0].x,g_lagrange[0].y);
+    println!("1 {:?} {:?}",g_lagrange[1].x,g_lagrange[1].y);
+    println!("1000000 {:?} {:?}",g_lagrange[1000000].x,g_lagrange[1000000].y);
+    println!("2000000 {:?} {:?}",g_lagrange[2000000].x,g_lagrange[2000000].y);
     for el in &g_lagrange {
         writer.write_all(el.to_bytes().as_ref())?;
     }
     let additional_data_len = additional_data.len() as u32;
     writer.write_all(&additional_data_len.to_le_bytes())?;
     writer.write_all(&additional_data)?;
+
+
+    println!("addiotion_data {:?} {:?}",additional_data_len,additional_data);
+
     return Ok(());
 }

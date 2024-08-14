@@ -111,7 +111,11 @@ fn main() {
 
 
     let (x,y)=g2_base[1].as_xy();
-    println!("xx={:?} yy={:?}",x.to_string(),y.to_string());
+    println!("x.c0 {:?}", x.c0.to_string());
+    println!("x.c1 {:?}",x.c1.to_string());
+    println!("y.c0 {:?}", y.c0.to_string());
+    println!("y.c1 {:?}",y.c1.to_string());
+
     let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
     println!("fuck-g2 {:?} {:?}",additional_data.len(),additional_data);
 

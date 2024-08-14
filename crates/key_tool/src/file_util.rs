@@ -60,6 +60,11 @@ pub fn write_halo2_params<W: io::Write>(
     additional_data: Vec<u8>,
 ) -> anyhow::Result<()> {
     writer.write_all(&k.to_le_bytes())?;
+
+    println!("0 {:?} {:?}",g[0].x,g[0].y);
+    println!("1 {:?} {:?}",g[0].x,g[0].y);
+    println!("1000000 {:?} {:?}",g[0].x,g[0].y);
+    println!("2000000 {:?} {:?}",g[0].x,g[0].y);
     for el in &g {
         println!("el={:?} {:?} bytes={:?}",el.x,el.y,el.to_bytes());
         writer.write_all(el.to_bytes().as_ref())?;

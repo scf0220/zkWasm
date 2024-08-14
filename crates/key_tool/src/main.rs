@@ -83,6 +83,7 @@ fn main() {
         BufReader::with_capacity(1 << 29, File::open(lagrange_key_file).unwrap());
     let (lagrange_key, g2_base) = read_zk_sync_key(&mut buf_reader_lagrange).unwrap();
 
+    panic!("need panic here");
     let mut buf_reader_monomial =
         BufReader::with_capacity(1 << 29, File::open(monomial_key_file).unwrap());
     let (monomial_key, _) = read_zk_sync_key(&mut buf_reader_monomial).unwrap();

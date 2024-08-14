@@ -109,9 +109,13 @@ fn main() {
         monomial_key_file, lagrange_key_file
     );
 
+    let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
+
+    println!("fuck-g2 {:?} {:?}",additional_data.len(),additional_data);
+            println!("ffff {:?}",g2_base[1].to_string());
+
     let g_lagrange = handle_lagrange.join().unwrap();
     let g_monomial = handle_normal.join().unwrap();
-    let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
     let k = (g_lagrange.len() as f64).log2() as u32;
 
     let mut fd = File::create(output_halo2_key_file).unwrap();

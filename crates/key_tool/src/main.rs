@@ -109,10 +109,11 @@ fn main() {
         monomial_key_file, lagrange_key_file
     );
 
-    let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
 
+    let (x,y)=g2_base[1].as_xy();
+    println!("xx={:?} yy={:?}",x.to_string(),y.to_string());
+    let additional_data = trans_g2(g2_base[1]).to_bytes().as_ref().to_vec();
     println!("fuck-g2 {:?} {:?}",additional_data.len(),additional_data);
-            println!("ffff {:?}",g2_base[1].to_string());
 
     let g_lagrange = handle_lagrange.join().unwrap();
     let g_monomial = handle_normal.join().unwrap();
